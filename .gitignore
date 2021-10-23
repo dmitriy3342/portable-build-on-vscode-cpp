@@ -1,0 +1,49 @@
+bin/
+locales/
+resources/
+swiftshader/
+tools/
+data/extensions/
+data/programs/msys64/
+data/user-data/Backups/
+data/user-data/blob_storage/
+data/user-data/Cache/
+data/user-data/CachedData/
+data/user-data/CachedExtensions/
+data/user-data/CachedExtensionVSIXs/
+data/user-data/Code Cache/
+data/user-data/Crashpad/
+data/user-data/databases/
+data/user-data/GPUCache/
+data/user-data/Local Storage/
+data/user-data/logs/
+data/user-data/Service Worker/
+data/user-data/Session Storage/
+data/user-data/User/globalStorage
+data/user-data/User/workspaceStorage
+d3dcompiler_47.dll
+ffmpeg.dll
+icudtl.dat
+libEGL.dll
+libGLESv2.dll
+resources.pak
+snapshot_blob.bin
+v8_context_snapshot.bin
+vk_swiftshader_icd.json
+vk_swiftshader.dll
+vulkan-1.dll
+chrome_100_percent.pak
+chrome_200_percent.pak
+Code.exe
+Code.VisualElementsManifest.xml
+data/argv.json
+data/user-data/code.lock
+data/user-data/Cookies
+data/user-data/Cookies-journal
+data/user-data/languagepacks.json
+data/user-data/machineid
+data/user-data/Network Persistent State
+data/user-data/QuotaManager
+data/user-data/QuotaManager-journal
+data/user-data/storage.json
+data/user-data/TransportSecurity
