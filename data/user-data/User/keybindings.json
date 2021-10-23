@@ -428,10 +428,10 @@
         "command": "workbench.action.showCommands",
         "key": "shift+ctrl+a"
     },
-    {
-        "command": "workbench.action.showAllSymbols",
-        "key": "ctrl+n"
-    },
+    // {
+    //     "command": "workbench.action.showAllSymbols",
+    //     "key": "ctrl+n"
+    // },
     {
         "command": "workbench.action.quickOpen",
         "key": "shift+ctrl+n"
@@ -924,6 +924,14 @@
         "key": "ctrl+shift+f"
     },
     {
+        "command": "editor.action.nextMatchFindAction",
+        "key": "enter",
+    },
+    {
+        "command": "editor.action.previousMatchFindAction",
+        "key": "shift+enter",
+    },
+    {
         "command": "-editor.action.nextMatchFindAction",
         "key": "enter"
     },
@@ -1138,5 +1146,13 @@
     {
         "command": "-editor.action.dirtydiff.previous",
         "key": "shift+alt+f3"
+    },
+    {
+        "key": "ctrl+n",
+        "command": "welcome.showNewFileEntries"
+    },
+    {
+        "key": "ctrl+alt+win+n",
+        "command": "-welcome.showNewFileEntries"
     }
 ]
