@@ -1,4 +1,4 @@
-# This project created with help Project Generator from IT Space SU
+## This project created with help Project Generator from IT Space SU
 
 # About VSCode SFML
 - Bases on MSYS64 

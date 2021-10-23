@@ -7,29 +7,15 @@
     ],
     "code-runner.runInTerminal": true,
     "code-runner.saveAllFilesBeforeRun": true,
-    // "code-runner.terminalRoot": "PowerShell",
     "code-runner.executorMap": {
-        // "cpp": "cd $dir && g++ -std=c++14 $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt"
-        "cpp": "g++ -std=c++20 $fileName -o $fileNameWithoutExt"
-        // "cpp": "cd $dir && g++ -std=c++14 $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt"
+        "cpp": "g++ -std=c++20 $fileName -o $fileNameWithoutExt && $fileNameWithoutExt"
         // "cpp": "cd $dir && g++ -std=c++14 $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt"
     },
-    // "code-runner.terminalRoot": "C:\\Program Portable\\VSCode-win32-x64-1.60.2-CPP\\program\\msys64\\msys2.exe",
-    // "terminal.explorerKind": "external",
-    // "terminal.external.windowsExec": "C:\\Program Portable\\VSCode-win32-x64-1.60.2-CPP\\program\\msys64\\msys2.exe",
-    // "terminal.integrated.shell.windows": "C:\\Program Portable\\VSCode-win32-x64-1.60.2-CPP\\program\\msys64\\msys2.exe",
-    // "terminal.integrated.shell.windows": "C:\\Program Portable\\VSCode-win32-x64-1.60.2-CPP\\program\\msys64\\usr\\bin\\bash.exe",
-    // "terminal.integrated.shellArgs.windows": ["--login", "-i"],
-
     "terminal.integrated.env.windows": {
-    //     //forbid shell from executing cd " ${HOME}"
         "CHERE_INVOKING": "1",
-    //     //choosing MinGW tools
+        //     //choosing MinGW tools
         "MSYSTEM": "MINGW64",
-
-    //     // "VSCODE_DIR": "SUBSTR=$(echo $VSCODE_GIT_ASKPASS_NODE$) && SUBSTR=${SUBSTR%\\Code.exe$} && \"$SUBSTR\""
-    //     // "VSCODE_DIR": "..."
-    //     // "PATH" : "$PATH:/mingw64/bin:/usr/local/bin:/usr/bin:/bin"         
+        "VSCODE": "__VSCODE_PATH__"
     },
     "terminal.integrated.profiles.windows": {
         "PowerShell": {
@@ -49,33 +35,130 @@
         },
         "MSYS2": {
             "path": "__VSCODE_PATH__\\data\\programs\\msys64\\usr\\bin\\bash.exe",
-            "args": ["--login", "-i"],
-
-            // "path": "$VSCODE_GIT_ASKPASS_NODE$\\..\\program\\msys64\\usr\\bin\\bash.exe",
-            // "path": "\"%VSCODE_GIT_ASKPASS_NODE%\"\\..\\program\\msys64\\usr\\bin\\bash.exe",
-            // "path": "$env:VSCODE_GIT_ASKPASS_NODE\\..\\program\\msys64\\usr\\bin\\bash.exe",
-
-            // "path": "powershell.exe",
-            // "source": "PowerShell",
-
-            // "path": "C:\\Portable Programs\\VSCode-win32-x64-CPP\\program\\msys64\\usr\\bin\\bash.exe",
-            // "path": "$(SUBSTR=$(echo $VSCODE_GIT_ASKPASS_NODE$) && SUBSTR=${SUBSTR%\\Code.exe$} && $SUBSTR\\program\\msys64\\usr\\bin\\bash.exe)",
-            // "args": ["set T=%VSCODE_GIT_ASKPASS_NODE%\\..\\program\\msys64\\usr\\bin\\bash.exe && /k start \"%T%\" "],
-            // "args": ["start ${env:VSCODE_GIT_ASKPASS_NODE}\\..\\program\\msys64\\usr\\bin\\bash.exe"],
-            // "args": ["start $env:VSCODE_GIT_ASKPASS_NODE\\..\\data\\programs\\msys64\\usr\\bin\\bash.exe -ArgumentList \"--login -i\" -NoNewWindow -Wait"],
-            // "args": ["echo ${env:VSCODE_GIT_ASKPASS_NODE}"],
-  
+            "args": [
+                "--login",
+                "-i"
+            ]
         }
     },
     "terminal.integrated.defaultProfile.windows": "MSYS2",
-    // "msys2.root":"$env:VSCODE_GIT_ASKPASS_NODE\\..\\data\\programs\\msys64",
-    // "C_Cpp.default.compilerPath": "$env:VSCODE_GIT_ASKPASS_NODE\\..\\data\\programs\\msys64\\mingw64\\bin\\g++.exe",
-
-    // "msys2.root":"C:\\Portable Programs\\VSCode-win32-x64-CPP\\data\\programs\\msys64",
     "C_Cpp.default.compilerPath": "__VSCODE_PATH__\\data\\programs\\msys64\\mingw64\\bin\\g++.exe",
-  
     "C_Cpp.default.cStandard": "c17",
     "C_Cpp.default.cppStandard": "c++20",
     "C_Cpp.default.intelliSenseMode": "windows-gcc-x64",
-
+    "C_Cpp.default.customConfigurationVariables": {
+        "miDebuggerPath": "__VSCODE_PATH__\\data\\programs\\msys64\\mingw64\\bin\\gdb.exe",
+        "cwd": "${fileDirname}",
+    },
+    "C_Cpp.intelliSenseEngine": "Tag Parser",
+    // arguments for work with SFML
+    "C_Cpp.default.compilerArgs": [
+        "-std=c++20", // language level for compiller
+        "-DSFML_STATIC", // Need comment for dynamic build
+        // "-I/c/Lib/SFML-2.5.1/include",
+        // "-L/c/Lib/SFML-2.5.1/lib",
+        "-lsfml-network-s", // Need comment for dynamic build
+        // "-lsfml-network", // Need uncomment for dynamic build
+        "-lws2_32",
+        "-lsfml-audio-s", // Need comment for dynamic build
+        // "-lsfml-audio",  // Need uncomment for dynamic build
+        "-logg",
+        "-lvorbis",
+        "-lvorbisfile",
+        "-lvorbisenc",
+        "-lflac",
+        "-lopenal",
+        "-lsfml-graphics-s", // Need comment for dynamic build
+        // "-lsfml-graphics", // Need uncomment for dynamic build
+        "-lfreetype",
+        "-lsfml-window-s", // Need comment for dynamic build
+        // "-lsfml-window",  // Need uncomment for dynamic build
+        "-lgdi32",
+        "-lopengl32",
+        "-lsfml-system-s", // Need comment for dynamic build
+        // "-lsfml-system", // Need uncomment for dynamic build
+        "-lwinmm",
+    ],
+    "files.autoSave": "afterDelay",
+    "files.autoSaveDelay": 10000,
+    "script-runner.statusBar": true,
+    "script-runner.definitions": {
+        "commands": [
+            {
+                "identifier": "create_settings",
+                "description": "Create Settings by Template",
+                "command": "python \"$VSCODE\\data\\programs\\scripts\\main.py\" --type_project $type_project",
+                "working_directory": "${workspaceFolder}",
+                "form": [
+                    {
+                        "variable": "$type_project",
+                        "question": "Choose a type of the Project?",
+                        "options": [
+                            "SFML",
+                            // "SFML 2"
+                        ]
+                    }
+                ]
+            },
+            {
+                "identifier": "create_settings_for_current_file",
+                "description": "Create Settings by Template for Current file",
+                "command": "python \"$VSCODE\\data\\programs\\scripts\\main.py\" --type_project $type_project --current_file_path \"$current_file_path\"",
+                "working_directory": "${workspaceFolder}",
+                "form": [
+                    {
+                        "variable": "$type_project",
+                        "question": "Choose a type of the Project",
+                        "options": [
+                            "SFML",
+                            // "SFML 2"
+                        ]
+                    },
+                    { 
+                        "variable": "$current_file_path",
+                        "question": "Use current file for build by default?",
+                        "defaultValuePath": true
+                    },
+                ]
+            },
+            {
+                "identifier": "create_project",
+                "description": "Create Project by Template (static)",
+                "command": "python \"$VSCODE\\data\\programs\\scripts\\main.py\" --type_project $type_project --template_name $template_name",
+                "working_directory": "${workspaceFolder}",
+                "form": [
+                    {
+                        "variable": "$type_project",
+                        "question": "Choose a type of the Project",
+                        "options": [
+                            "SFML",
+                            // "SFML 2"
+                        ]
+                    },
+                    {
+                        "variable": "$template_name",
+                        "question": "Choose a template for your Project",
+                        "options": [
+                            "flappy-bird-cusom",
+                            "ftp",
+                            "joystick",
+                            "opengl",
+                            "pong",
+                            "shader",
+                            "sockets",
+                            "sound",
+                            "sound-capture",
+                            "voip",
+                            "win32",
+                            "window",
+                        ]
+                    }
+                ]
+            },
+        ],
+        "variables": {
+        }
+    }
 }
+
+

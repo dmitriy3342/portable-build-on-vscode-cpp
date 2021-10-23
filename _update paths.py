@@ -15,4 +15,4 @@ DATA = DATA.replace(KEY_WORD, VSCODE_PATH)
 with open(SETTINGS_PATH, "w", encoding="utf-8") as f:
     f.write(DATA)
 
-print(f"Seted VSCode PATH to {VSCODE_PATH}")
+print(f"Setted VSCode PATH to {VSCODE_PATH}")
