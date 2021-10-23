@@ -925,10 +925,12 @@
     },
     {
         "command": "editor.action.nextMatchFindAction",
+        "when": "findInputFocussed",
         "key": "enter",
     },
     {
         "command": "editor.action.previousMatchFindAction",
+        "when": "findInputFocussed",
         "key": "shift+enter",
     },
     {
